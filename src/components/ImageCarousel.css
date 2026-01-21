@@ -1,34 +1,38 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  background-color: #f5f5f5;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .carousel-viewport {
   position: relative;
   width: 100%;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  background-color: #fafafa;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.3s ease-out;
   height: 100%;
+  width: 100%;
 }
 
 .carousel-slide {
   min-width: 100%;
-  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fafafa;
 }
 
 .carousel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -37,10 +41,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -48,12 +52,12 @@
   justify-content: center;
   z-index: 10;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .carousel-arrow:hover {
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .carousel-arrow:active {
@@ -61,31 +65,31 @@
 }
 
 .carousel-arrow svg {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   color: #000;
 }
 
 .carousel-arrow-left {
-  left: 15px;
+  left: 12px;
 }
 
 .carousel-arrow-right {
-  right: 15px;
+  right: 12px;
 }
 
 /* Dots Indicator */
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  padding: 15px 0;
+  gap: 6px;
+  padding: 12px 0;
   background: #fff;
 }
 
 .carousel-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   border: none;
   background-color: #ddd;
@@ -100,78 +104,40 @@
 
 .carousel-dot.active {
   background-color: #000;
-  transform: scale(1.2);
 }
 
-/* Image Counter */
+/* Image Counter - Hidden by default */
 .carousel-counter {
   display: none;
-  position: absolute;
-  bottom: 60px;
-  right: 15px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 11px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  letter-spacing: 1px;
 }
 
-/* ===== DESKTOP - Show all images in vertical gallery ===== */
+/* ===== DESKTOP - Hide carousel ===== */
 @media (min-width: 1025px) {
   .carousel-container {
-    background: transparent;
-  }
-
-  .carousel-viewport {
-    display: none;
-  }
-
-  .carousel-dots {
-    display: none;
-  }
-
-  .carousel-counter {
     display: none;
   }
 }
 
 /* ===== TABLET ===== */
 @media (max-width: 1024px) {
-  .carousel-arrow {
-    width: 36px;
-    height: 36px;
+  .carousel-container {
+    margin: 0 16px;
+    border-radius: 2px;
   }
 
-  .carousel-arrow svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .carousel-arrow-left {
-    left: 12px;
-  }
-
-  .carousel-arrow-right {
-    right: 12px;
-  }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
   .carousel-viewport {
     aspect-ratio: 3/4;
+    border-radius: 2px;
   }
 
   .carousel-arrow {
     width: 32px;
     height: 32px;
-    background: rgba(255, 255, 255, 0.8);
   }
 
   .carousel-arrow svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .carousel-arrow-left {
@@ -183,34 +149,29 @@
   }
 
   .carousel-dots {
-    padding: 12px 0;
-    gap: 6px;
-  }
-
-  .carousel-dot {
-    width: 6px;
-    height: 6px;
-  }
-
-  .carousel-counter {
-    display: block;
+    padding: 10px 0;
   }
 }
 
-/* ===== SMALL MOBILE ===== */
-@media (max-width: 480px) {
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .carousel-container {
+    margin: 0 12px;
+  }
+
   .carousel-viewport {
-    aspect-ratio: 4/5;
+    aspect-ratio: 3/4;
   }
 
   .carousel-arrow {
     width: 28px;
     height: 28px;
+    background: rgba(255, 255, 255, 0.9);
   }
 
   .carousel-arrow svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 
   .carousel-arrow-left {
@@ -222,7 +183,7 @@
   }
 
   .carousel-dots {
-    padding: 10px 0;
+    padding: 8px 0;
     gap: 5px;
   }
 
@@ -230,10 +191,43 @@
     width: 5px;
     height: 5px;
   }
+}
 
-  .carousel-counter {
-    font-size: 10px;
-    padding: 4px 8px;
-    bottom: 50px;
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .carousel-container {
+    margin: 0 10px;
+  }
+
+  .carousel-viewport {
+    aspect-ratio: 4/5;
+  }
+
+  .carousel-arrow {
+    width: 26px;
+    height: 26px;
+  }
+
+  .carousel-arrow svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .carousel-arrow-left {
+    left: 6px;
+  }
+
+  .carousel-arrow-right {
+    right: 6px;
+  }
+
+  .carousel-dots {
+    padding: 6px 0;
+    gap: 4px;
+  }
+
+  .carousel-dot {
+    width: 4px;
+    height: 4px;
   }
 }
