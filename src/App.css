@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.page-title {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
