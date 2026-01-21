@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 .carousel-track {
@@ -26,7 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 .carousel-slide img {
@@ -141,7 +141,7 @@
   }
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE - единый отступ 16px ===== */
 @media (max-width: 768px) {
   .carousel-container {
     margin: 0 16px;
@@ -181,7 +181,7 @@
   }
 }
 
-/* ===== SMALL MOBILE ===== */
+/* ===== SMALL MOBILE - единый отступ 12px ===== */
 @media (max-width: 480px) {
   .carousel-container {
     margin: 0 12px;
