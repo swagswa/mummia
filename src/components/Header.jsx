@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
@@ -27,35 +28,35 @@ function Header() {
             <span></span>
           </button>
 
-          <a href="/" className="logo mobile-logo">
-            <img src="/logo.svg" alt="MUMIA" className="logo-image" />
-          </a>
+          <Link to="/" className="logo mobile-logo" onClick={closeMenu}>
+            <img src="/logo.svg" alt="MUMMIA" className="logo-image" />
+          </Link>
 
-          <a href="#" className="nav-link mobile-cart">CART (0)</a>
+          <Link to="#" className="nav-link mobile-cart">CART (0)</Link>
         </div>
 
         {/* Desktop & Mobile Navigation */}
         <div className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
           <div className="nav-left">
-            <a href="#" className="nav-link underline" onClick={closeMenu}>NEW ARRIVALS</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>TOPS</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>BODYSUITS</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>BOTTOMS</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>DRESSES</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>SWIM</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>ACCESSORIES</a>
-            <a href="#" className="nav-link" onClick={closeMenu}>CONTACT</a>
+            <Link to="#" className="nav-link underline" onClick={closeMenu}>NEW ARRIVALS</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>TOPS</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>BODYSUITS</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>BOTTOMS</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>DRESSES</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>SWIM</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>ACCESSORIES</Link>
+            <Link to="#" className="nav-link" onClick={closeMenu}>CONTACT</Link>
           </div>
 
           <div className="nav-center desktop-only">
-            <a href="/" className="logo">
-              <img src="/logo.svg" alt="MUMIA" className="logo-image" />
-            </a>
+            <Link to="/" className="logo">
+              <img src="/logo.svg" alt="MUMMIA" className="logo-image" />
+            </Link>
           </div>
 
           <div className="nav-right">
-            <a href="#" className="nav-link" onClick={closeMenu}>SEARCH</a>
-            <a href="#" className="nav-link desktop-only" onClick={closeMenu}>CART (0)</a>
+            <Link to="#" className="nav-link" onClick={closeMenu}>SEARCH</Link>
+            <Link to="#" className="nav-link desktop-only" onClick={closeMenu}>CART (0)</Link>
           </div>
         </div>
 

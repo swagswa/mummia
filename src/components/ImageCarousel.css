@@ -43,21 +43,21 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.95);
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 5;
   transition: all 0.2s;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-arrow:hover {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-arrow:active {
@@ -65,17 +65,17 @@
 }
 
 .carousel-arrow svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   color: #000;
 }
 
 .carousel-arrow-left {
-  left: 12px;
+  left: 16px;
 }
 
 .carousel-arrow-right {
-  right: 12px;
+  right: 16px;
 }
 
 /* Dots Indicator */
@@ -83,13 +83,13 @@
   display: flex;
   justify-content: center;
   gap: 6px;
-  padding: 12px 0;
+  padding: 10px 0;
   background: #fff;
 }
 
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   border: none;
   background-color: #ddd;
@@ -106,7 +106,7 @@
   background-color: #000;
 }
 
-/* Image Counter - Hidden by default */
+/* Image Counter - Hidden */
 .carousel-counter {
   display: none;
 }
@@ -121,42 +121,30 @@
 /* ===== TABLET ===== */
 @media (max-width: 1024px) {
   .carousel-container {
-    margin: 0 16px;
-    border-radius: 2px;
+    margin: 0 20px;
   }
 
   .carousel-viewport {
     aspect-ratio: 3/4;
-    border-radius: 2px;
-  }
-
-  .carousel-arrow {
-    width: 32px;
-    height: 32px;
-  }
-
-  .carousel-arrow svg {
-    width: 14px;
-    height: 14px;
   }
 
   .carousel-arrow-left {
-    left: 10px;
+    left: 14px;
   }
 
   .carousel-arrow-right {
-    right: 10px;
+    right: 14px;
   }
 
   .carousel-dots {
-    padding: 10px 0;
+    padding: 8px 0;
   }
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .carousel-container {
-    margin: 0 12px;
+    margin: 0 16px;
   }
 
   .carousel-viewport {
@@ -175,11 +163,11 @@
   }
 
   .carousel-arrow-left {
-    left: 8px;
+    left: 12px;
   }
 
   .carousel-arrow-right {
-    right: 8px;
+    right: 12px;
   }
 
   .carousel-dots {
@@ -188,15 +176,15 @@
   }
 
   .carousel-dot {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
   }
 }
 
 /* ===== SMALL MOBILE ===== */
 @media (max-width: 480px) {
   .carousel-container {
-    margin: 0 10px;
+    margin: 0 12px;
   }
 
   .carousel-viewport {
@@ -214,20 +202,15 @@
   }
 
   .carousel-arrow-left {
-    left: 6px;
+    left: 10px;
   }
 
   .carousel-arrow-right {
-    right: 6px;
+    right: 10px;
   }
 
   .carousel-dots {
     padding: 6px 0;
     gap: 4px;
-  }
-
-  .carousel-dot {
-    width: 4px;
-    height: 4px;
   }
 }

@@ -3,7 +3,7 @@
   background-color: #fff;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
 }
 
 .nav {
@@ -177,11 +177,14 @@
   .mobile-header .logo {
     flex-shrink: 1;
     min-width: 0;
+    z-index: 201;
+    position: relative;
   }
 
   .mobile-header .logo-image {
     max-width: 120px;
     height: auto;
+    pointer-events: auto;
   }
 
   /* Show hamburger with proper touch target */
