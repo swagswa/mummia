@@ -44,3 +44,60 @@
   letter-spacing: 0.5px;
   color: #000;
 }
+
+/* ===== TABLET STYLES ===== */
+@media (max-width: 1024px) {
+  .product-image-wrapper {
+    margin-bottom: 12px;
+  }
+
+  .product-name {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .product-price {
+    font-size: 10px;
+  }
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  .product-card:hover {
+    opacity: 1;
+  }
+
+  .product-card:active {
+    opacity: 0.8;
+  }
+
+  .product-image-wrapper {
+    margin-bottom: 10px;
+  }
+
+  .product-name {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .product-price {
+    font-size: 11px;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .product-image-wrapper {
+    aspect-ratio: 3/4;
+    margin-bottom: 12px;
+  }
+
+  .product-name {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .product-price {
+    font-size: 12px;
+  }
+}

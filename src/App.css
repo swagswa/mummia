@@ -8,6 +8,7 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #ffffff;
   color: #000000;
+  overflow-x: hidden;
 }
 
 .app {
@@ -26,4 +27,40 @@ body {
   letter-spacing: 1px;
   margin-bottom: 80px;
   text-transform: uppercase;
+}
+
+/* ===== TABLET STYLES ===== */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 50px 30px;
+  }
+
+  .page-title {
+    margin-bottom: 60px;
+  }
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 40px 20px;
+  }
+
+  .page-title {
+    font-size: 12px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 30px 15px;
+  }
+
+  .page-title {
+    font-size: 11px;
+    margin-bottom: 30px;
+  }
 }

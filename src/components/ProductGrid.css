@@ -37,21 +37,64 @@
   gap: 50px 30px;
 }
 
+/* ===== LARGE TABLET / SMALL DESKTOP ===== */
 @media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px 25px;
   }
 }
 
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .sort-controls {
+    margin-bottom: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 20px;
+  }
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+  .sort-controls {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .sort-button {
+    font-size: 10px;
+  }
+
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
+    gap: 30px 15px;
   }
 }
 
+/* ===== SMALL MOBILE ===== */
 @media (max-width: 480px) {
+  .sort-controls {
+    margin-bottom: 25px;
+  }
+
+  .sort-button {
+    font-size: 9px;
+    gap: 6px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 12px;
+  }
+}
+
+/* ===== VERY SMALL MOBILE (optional single column) ===== */
+@media (max-width: 360px) {
   .product-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
