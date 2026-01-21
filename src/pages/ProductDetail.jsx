@@ -1,25 +1,25 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import { products } from '../data/products'
 import ProductGrid from '../components/ProductGrid'
+import ImageCarousel from '../components/ImageCarousel'
 
 function ProductDetail() {
   const { id } = useParams()
   const product = products.find(p => p.id === parseInt(id))
   const [selectedColor, setSelectedColor] = useState(0)
   const [selectedSize, setSelectedSize] = useState('XS')
-  const descriptionRef = useRef(null)
 
   if (!product) {
-    return <div>Product not found</div>
+    return <div className="product-not-found">Product not found</div>
   }
 
   return (
     <div className="product-detail">
       <div className="product-content">
-        {/* Left side - Vertical Gallery */}
-        <div className="product-gallery">
+        {/* Desktop: Vertical Gallery */}
+        <div className="product-gallery desktop-gallery">
           {product.images.map((image, index) => (
             <div key={index} className="gallery-item">
               <img src={image} alt={`${product.name} ${index + 1}`} />
@@ -27,16 +27,22 @@ function ProductDetail() {
           ))}
         </div>
 
-        {/* Right side - Sticky Description */}
-        <div ref={descriptionRef} className="product-info">
+        {/* Mobile/Tablet: Image Carousel */}
+        <div className="mobile-carousel">
+          <ImageCarousel images={product.images} productName={product.name} />
+        </div>
+
+        {/* Product Information */}
+        <div className="product-info">
           <h1 className="product-title">{product.name}</h1>
+
           <p className="product-price">{product.price}</p>
 
           <div className="tax-info">
             Tax included. <span className="shipping-link">Shipping</span> calculated at checkout.
           </div>
 
-          {/* Description List */}
+          {/* Description */}
           <div className="product-description">
             {product.description.map((line, index) => (
               <p key={index}>{line}</p>
@@ -77,12 +83,17 @@ function ProductDetail() {
             </div>
           </div>
 
-          {/* Add to Cart Button */}
-          <button className="add-to-cart-button">ADD TO CART</button>
+          {/* Add to Cart Button - Desktop */}
+          <button className="add-to-cart-button desktop-cart-btn">ADD TO CART</button>
         </div>
       </div>
 
-      {/* Catalog Section at Bottom */}
+      {/* Mobile: Fixed Add to Cart Button */}
+      <div className="mobile-cart-wrapper">
+        <button className="add-to-cart-button mobile-cart-btn">ADD TO CART</button>
+      </div>
+
+      {/* Related Products */}
       <div className="related-products">
         <h2 className="related-title">YOU MAY ALSO LIKE</h2>
         <ProductGrid />
